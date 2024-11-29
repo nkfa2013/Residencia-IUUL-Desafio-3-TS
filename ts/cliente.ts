@@ -1,5 +1,5 @@
 import { Endereco } from "./endereco";
-import { Pessoa } from "./pessoa";
+import { Pessoa } from "./ts/pessoa";
 import { IUsuario } from './IUsuario';
 import { Conta } from './conta';
 

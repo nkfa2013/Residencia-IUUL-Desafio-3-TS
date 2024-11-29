@@ -2,22 +2,26 @@ import { Debito } from './Debito';
 import { Credito } from './Credito';
 
 export abstract class Conta {
-    protected debitos: Debito[] = [];
-    protected creditos: Credito[] = [];
-    protected saldo: number = 0;
-    constructor(public numero: string) {}
+    protected _debitos: Debito[] = [];
+    protected _creditos: Credito[] = [];
+    protected _saldo: number = 0;
+    private _numero: String;
+
+    constructor(numero: string) {
+        this._numero = numero;
+    }
 
     depositar(valor: number): void {
         const credito = new Credito(valor, new Date());
-        this.creditos.push(credito);
-        this.saldo += valor;
+        this._creditos.push(credito);
+        this._saldo += valor;
     }
 
     sacar(valor: number): void {
-        if (this.saldo >= valor) {
+        if (this._saldo >= valor) {
             const debito = new Debito(valor, new Date());
-            this.debitos.push(debito);
-            this.saldo -= valor;
+            this._debitos.push(debito);
+            this._saldo -= valor;
         } else {
             console.log("Saldo insuficiente.");
         }
