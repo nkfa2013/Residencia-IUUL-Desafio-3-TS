@@ -1,46 +1,46 @@
 export abstract class Pessoa {
    
-    private _nome: String;
-    private _idade: Number;
-    private _cpf: String;
-    private _telefone: String;
+    private _nome: string;
+    private _idade: number;
+    private _cpf: string;
+    private _telefone: string;
     
-    constructor(nome: String, idade: Number, cpf: String, telefone: String) {
+    constructor(nome: string, idade: number, cpf: string, telefone: string) {
         this._nome = nome;
         this._idade = idade;
         this._cpf = cpf;
         this._telefone = telefone;
     }
 
-    public get nome(): String {
+    public get nome(): string {
         return this._nome;
     }
 
-    public set nome(value: String) {
+    public set nome(value: string) {
         this._nome = value;
     }
 
-    public get idade(): Number {
+    public get idade(): number {
         return this._idade;
     }
 
-    public set idade(value: Number) {
+    public set idade(value: number) {
         this._idade = value;
     }
     
-    public get cpf(): String {
+    public get cpf(): string {
         return this._cpf;
     }
 
-    public set cpf(value: String) {
+    public set cpf(value: string) {
         this._cpf = value;
     }
 
-    public get telefone(): String {
+    public get telefone(): string {
         return this._telefone;
     }
     
-    public set telefone(value: String) {
+    public set telefone(value: string) {
         this._telefone = value;
     }
 

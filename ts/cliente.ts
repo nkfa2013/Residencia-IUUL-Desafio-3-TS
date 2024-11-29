@@ -1,7 +1,8 @@
+import { Conta } from "./conta";
 import { Endereco } from "./endereco";
-import { Pessoa } from "./ts/pessoa";
-import { IUsuario } from './IUsuario';
-import { Conta } from './conta';
+import { IUsuario } from "./IUsuario";
+import { Pessoa } from "./pessoa";
+
 
 export class Cliente extends Pessoa implements IUsuario {
     
@@ -9,7 +10,7 @@ export class Cliente extends Pessoa implements IUsuario {
     private contas: Conta[] = [];
     private vip: boolean;
 
-    constructor(nome: String, idade: Number, cpf: String, telefone: String, vip: boolean) {
+    constructor(nome: string, idade: number, cpf: string, telefone: string, vip: boolean) {
         super(nome, idade, cpf, telefone);
         this.vip = vip;
     }
