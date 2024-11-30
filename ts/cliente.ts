@@ -5,9 +5,9 @@ import { Pessoa } from "./pessoa";
 
 
 export class Cliente extends Pessoa implements IUsuario {
-    
+
     private _enderecos: Endereco[] = [];
-    private contas: Conta[] = [];
+    private _contas: Conta[] = [];
     private vip: boolean;
 
     constructor(nome: string, idade: number, cpf: string, telefone: string, vip: boolean) {
@@ -32,12 +32,22 @@ export class Cliente extends Pessoa implements IUsuario {
 
     public listarEnderecos() {
         console.log("Endereços do Cliente:");
-        this.enderecos.forEach(endereco => {
+        this._enderecos.forEach(endereco => {
             console.log(`${endereco.logradouro}, ${endereco.numero}${endereco.complemento != "" ? ', ' + endereco.complemento : ''} - ${endereco.cidade}, ${endereco.uf}`);
         });
     }
 
-    public adicionarConta(conta: Conta){
-        this.contas.push(conta);
+    public adicionarConta(conta: Conta) {
+        this._contas.push(conta);
     }
+
+    public saldo(nroConta: string): number {
+
+        this._contas.forEach(conta => {
+            if (conta.numero == nroConta)
+                return conta.calcularSaldo();
+        })
+        return 0;
+    }
+
 }
