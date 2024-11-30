@@ -5,6 +5,20 @@ import { ContaPoupanca } from './contaPoupanca';
 import { Funcionario } from "./funcionario";
 import { Cargo } from "./cargo";
 
+console.log("App 1: \n");
+app1();
+
+console.log("App 2: \n");
+app2();
+
+console.log("App 3: \n");
+app3();
+
+// console.log("App 4: \n");
+// app4();
+
+// console.log("App 5: \n");
+// app5();
 
 function app1(): void {
     var func1 = new Funcionario("Fulano", 25, "12345678900", "(21) 98765-4321", 10000);
