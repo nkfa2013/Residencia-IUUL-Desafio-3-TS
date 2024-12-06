@@ -54,14 +54,22 @@ function app2(): void {
 function app3(): void {
     var cliente = new Cliente("Nikolas F", 27, "12345678900", "(21) 99988-7766", true);
 
-    var conta: ContaCorrente = new ContaCorrente("1009988", 500);
+    var conta: ContaCorrente = new ContaCorrente("1009988", 100);
     cliente.adicionarConta(conta);
+    console.log(cliente.saldo("1009988"));
+    cliente.getConta("1009988").depositar(100);
+    cliente.getConta("1009988").depositar(100);
+    cliente.getConta("1009988").depositar(100);
+    cliente.getConta("1009988").sacar(50);
 
-    console.log(cliente.saldo(conta.numero));
+    console.log(cliente.saldo("1009988"));
 }
 
 function app4(): void {
+    var cliente = new Cliente("Nikolas F", 27, "12345678900", "(21) 99988-7766", true);
 
+    var contaCorrente: ContaCorrente = new ContaCorrente("1009988", 0);
+    cliente.adicionarConta(contaCorrente);
 }
 
 function app5(): void {

@@ -1,4 +1,5 @@
 import { Conta } from "./conta";
+import { ContaCorrente } from "./contaCorrente";
 import { Endereco } from "./endereco";
 import { IUsuario } from "./IUsuario";
 import { Pessoa } from "./pessoa";
@@ -21,6 +22,16 @@ export class Cliente extends Pessoa implements IUsuario {
     public set enderecos(value: Endereco[]) {
         this._enderecos = value;
     }
+
+    
+    public getConta(nroConta: string): Conta {
+        this._contas.forEach(conta => {
+            if (conta.numero == nroConta)
+                return conta;
+        });
+        return this._contas[0];
+    }
+    
 
     public adicionarEndereco(endereco: Endereco) {
         this._enderecos.push(endereco);

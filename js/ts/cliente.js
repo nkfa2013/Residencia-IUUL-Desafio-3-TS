@@ -15,6 +15,13 @@ class Cliente extends pessoa_1.Pessoa {
     set enderecos(value) {
         this._enderecos = value;
     }
+    getConta(nroConta) {
+        this._contas.forEach(conta => {
+            if (conta.numero == nroConta)
+                return conta;
+        });
+        return this._contas[0];
+    }
     adicionarEndereco(endereco) {
         this._enderecos.push(endereco);
     }

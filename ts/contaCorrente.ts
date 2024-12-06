@@ -20,15 +20,15 @@ export class ContaCorrente extends Conta {
         }
     }
 
-    // calcularSaldo(): number {
-    //     return this._saldo + this._limite;
-    // }
-
     calcularSaldo(): number {
-        const totalCreditos = this._creditos.reduce((total, credito) => total + credito.valor, 0);
-
-        const totalDebitos = this._debitos.reduce((total, debito) => total + debito.valor, 0);
-        
-        return totalCreditos - totalDebitos;
+        return this._saldo + this._limite;
     }
+
+    // calcularSaldo(): number {
+    //     const totalCreditos = this._creditos.reduce((total, credito) => total + credito.valor, 0);
+
+    //     const totalDebitos = this._debitos.reduce((total, debito) => total + debito.valor, 0);
+        
+    //     return totalCreditos - totalDebitos;
+    // }
 }
